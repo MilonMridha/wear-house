@@ -5,7 +5,7 @@ import SixPerfume from '../SixPerfume/SixPerfume';
 const Inventory = () => {
 
     const [perfumes, setPerfumes] = useHook();
-    console.log(perfumes)
+    
 
     return (
         <div className='container mt-5'>
