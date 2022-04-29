@@ -20,7 +20,7 @@ const ManageInventory = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
-                    const remaining = perfumes.filter(item => item._id !== id);
+                    const remaining = perfumes?.filter(item => item._id !== id);
                     setPerfumes(remaining);
                 });
         }
@@ -32,16 +32,16 @@ const ManageInventory = () => {
 
             <div className=' container mx-auto row row-cols-1 row-cols-md-3 g-4 mb-3 pb-3'>
                 {
-                    perfumes.map(perfume => <div key={perfume._id}>
+                    perfumes?.map(perfume => <div key={perfume._id}>
                     
 
                         <Card className='container ms-2 shadow card bg-light p-3 rounded-pill mb-2' style={{ width: '18rem' }}>
 
                             <Card.Body className=' ms-0'>
-                                <Card.Title>Name: {perfume.name}</Card.Title>
-                                <Card.Title>Price :${perfume.price}</Card.Title>
+                                <Card.Title>Name: {perfume?.name}</Card.Title>
+                                <Card.Title>Price :${perfume?.price}</Card.Title>
                                 <Card.Title>Qty: {perfume.quantity}</Card.Title>
-                                <h6>Supplier : {perfume.supplier}</h6>
+                                <h6>Supplier : {perfume?.supplier}</h6>
                                 <h6>ID : {perfume._id}</h6>
                                 <p>Url: {perfume.img}</p>
 

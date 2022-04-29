@@ -1,11 +1,19 @@
 [
     {
-        "name": "Austin",
-        "img" : "https://i.ibb.co/9cthYKR/austin-wilcox.jpg",
-        "detail": "British Rococo perfume vase; circa 1761; soft-paste porcelain",
+        "name": "Laura",
+        "img" : "https://i.ibb.co/qkK2BcR/laura.jpg",
+        "detail": "An old fragrance family that until recently consisted mainly of freshening eau de colognes",
+        "price": "350",
+        "quantity": "9",
+        "supplier" : "Laura Limited"
+    },
+    {
+        "name": "Yixian Zaho",
+        "img" : "https://i.ibb.co/SV8qDRH/yixian-zhao.jpg",
+        "detail": "Commonly used terrestrial portions in perfumery include iris rhizomes, vetiver roots, various rhizomes of the ginger family",
         "price": "300",
-        "quantity": "18",
-        "supplier" : "Dcosta Limited"
+        "quantity": "9",
+        "supplier" : "Zhao Limited"
     },
     {
         "name": "Fernando",
@@ -32,6 +40,22 @@
         "supplier" : "label Limited"
     },
     {
+        "name": "Austin",
+        "img" : "https://i.ibb.co/9cthYKR/austin-wilcox.jpg",
+        "detail": "British Rococo perfume vase; circa 1761; soft-paste porcelain",
+        "price": "300",
+        "quantity": "18",
+        "supplier" : "Dcosta Limited"
+    },
+    {
+        "name": "Villain",
+        "img" : "https://i.ibb.co/vzG4byv/villain.jpg",
+        "detail": "This newer classification method is widely used in retail and the fragrance industry",
+        "price": "550",
+        "quantity": "12",
+        "supplier" : "Villain Limited"
+    },
+    {
         "name": "Jeroen",
         "img" : "https://i.ibb.co/nfhqW9M/jeroen-den.jpg",
         "detail": "with a sharp herbaceous and woody scent",
@@ -47,18 +71,11 @@
         "quantity": "10",
         "supplier" : "Jeroen limited"
     },
-    {
-        "name": "Laura",
-        "img" : "https://i.ibb.co/qkK2BcR/laura.jpg",
-        "detail": "An old fragrance family that until recently consisted mainly of freshening eau de colognes",
-        "price": "350",
-        "quantity": "9",
-        "supplier" : "Laura Limited"
-    },
+    
     {
         "name": "Laura chouette",
         "img" : "https://i.ibb.co/NL9Hgf2/laura-chouette.jpg",
-        "detail": "",
+        "detail": "Valued since antiquity, resins have been widely used in incense and perfumery",
         "price": "400",
         "quantity": "8",
         "supplier" : "Chouette Limited"
@@ -71,28 +88,14 @@
         "quantity": "7",
         "supplier" : "Saleh Limited"
     },
+    
     {
-        "name": "Villain",
-        "img" : "https://i.ibb.co/vzG4byv/villain.jpg",
-        "detail": "This newer classification method is widely used in retail and the fragrance industry",
-        "price": "550",
-        "quantity": "12",
-        "supplier" : "Villain Limited"
-    },
-    {
-        "name": "",
+        "name": "Wiliam-bout",
         "img" : "https://i.ibb.co/q9CSKPG/william-bout.jpg",
         "detail": "Valued since antiquity, resins have been widely used in incense and perfumery",
         "price": "450",
         "quantity": "5",
         "supplier" : "William Limited"
-    },
-    {
-        "name": "Yixian Zaho",
-        "img" : "https://i.ibb.co/SV8qDRH/yixian-zhao.jpg",
-        "detail": "Commonly used terrestrial portions in perfumery include iris rhizomes, vetiver roots, various rhizomes of the ginger family",
-        "price": "300",
-        "quantity": "9",
-        "supplier" : "Zhao Limited"
     }
+    
 ]
