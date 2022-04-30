@@ -3,7 +3,8 @@ import { Button, Card } from 'react-bootstrap';
 
 import useHook from '../../Hook/Hook';
 import AddNewItem from '../AddNewItem/AddNewItem';
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ManageInventory = () => {
     const [perfumes, setPerfumes] = useHook();
@@ -20,6 +21,7 @@ const ManageInventory = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
+                    toast('Deleted Successfully')
                     const remaining = perfumes?.filter(item => item._id !== id);
                     setPerfumes(remaining);
                 });
@@ -58,7 +60,7 @@ const ManageInventory = () => {
             <div className='mt-5 mb-5'>
                 <AddNewItem></AddNewItem>
             </div>
-
+                <ToastContainer></ToastContainer>
         </div>
     );
 };

@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading/Loading';
 
 const SignUp = () => {
     const nameRef = useRef('');
@@ -18,7 +19,9 @@ const SignUp = () => {
         loading,
         hookError,
       ] = useCreateUserWithEmailAndPassword(auth,  { sendEmailVerification: true });
-
+      if(loading){
+          return <Loading></Loading>
+      }
     const handleFormSubmit = event =>{
         event.preventDefault()
         const name = nameRef.current.value;

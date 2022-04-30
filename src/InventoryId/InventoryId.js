@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Button as Button, Card, Form } from 'react-bootstrap';
+import { Button as Button, Card, Form, } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const InventoryId = () => {
     const { id } = useParams();
 
     const [singleItem, setSingleItem] = useState({});
     const { name, detail, img, price, quantity, supplier, _id } = singleItem;
+    
 
     useEffect(() => {
         const url = `https://gentle-crag-55338.herokuapp.com/product/${id}`;
@@ -15,10 +18,50 @@ const InventoryId = () => {
             .then(data => setSingleItem(data))
     }, [id]);
 
-    const handleSubmit = event => {
+    //delevery item ------------>
+    const handleDelivery = () =>{
+        const quantity = singleItem.quantity - 1;
+        
+        const updateItem = {quantity};
+        const url = `https://gentle-crag-55338.herokuapp.com/product/${id}`;
+        fetch(url, {
+            method : "PUT",
+            headers : {
+                'content-type': 'application/json'
+            },
+            body : JSON.stringify(updateItem)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log('success', data)
+            
+            toast('Product delivered successfully')
+            
+        })
+
+    }
+
+    //handle reload stock quantity----------->
+    const handleUpdate = event => {
         event.preventDefault();
         const quantity = event.target.quantity.value;
-        console.log(quantity)
+        
+        const updateItem = {quantity};
+        const url = `https://gentle-crag-55338.herokuapp.com/product/${id}`;
+        fetch(url, {
+            method : "PUT",
+            headers : {
+                'content-type': 'application/json'
+            },
+            body : JSON.stringify(updateItem)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log('success', data)
+            
+            toast('Product Stock update successfully')
+            event.target.reset()
+        })
     }
 
     return (
@@ -37,14 +80,15 @@ const InventoryId = () => {
                             </Card.Text>
 
                             <div className='d-flex justify-content-center'>
-                                <Button className='button w-100 rounded-pill' variant="danger">Delivered</Button>
+                                <Button onClick={handleDelivery} className='button w-100 rounded-pill' variant="danger">Delivered</Button>
+                                
                             </div>
                         </Card.Body>
                     </Card>
                 }
             </div>
             <div className='mb-5'>
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={handleUpdate}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
 
                         <Form.Control className='rounded-pill shadow pb-2 w-50 mx-auto' type="text" placeholder="Input Quantity" name="quantity" required />
@@ -54,9 +98,12 @@ const InventoryId = () => {
                         Add Quantity
                     </Button>
                 </Form>
+                <ToastContainer></ToastContainer>
             </div>
            
             <Link to='/manage' className='d-block mx-auto p-2 rounded-pill w-50 btn btn-primary text-decoration-none mb-5' bg="primary">Manage Inventory</Link>
+
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
