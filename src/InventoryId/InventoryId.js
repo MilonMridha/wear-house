@@ -3,6 +3,7 @@ import { Button as Button, Card, Form, } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './InventoryId.css'
 
 const InventoryId = () => {
     const { id } = useParams();
@@ -69,7 +70,7 @@ const InventoryId = () => {
             <div className='d-flex justify-content-center mt-5 mb-5'>
                 {
                     singleItem && <Card className='h-100 shadow card pb-3 rounded' style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={img} />
+                        <Card.Img className='inven-img' variant="top" src={img} />
                         <Card.Body className=' ms-0'>
                             <Card.Title>{name}</Card.Title>
                             <Card.Title>Price :${price}</Card.Title>

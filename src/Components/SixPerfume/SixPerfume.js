@@ -15,8 +15,8 @@ const navigate = useNavigate();
 
     return (
         <div>
-            <Card className='h-100 shadow card pb-3 rounded' style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={img} />
+            <Card className='h-100 shadow card pb-3  rounded' style={{ width: '18rem' }}>
+                <Card.Img className='home-image' variant="top" src={img} />
                 <Card.Body className=' ms-0'>
                     <Card.Title>{name}</Card.Title>
                     <Card.Title>Price :${price}</Card.Title>
@@ -27,7 +27,7 @@ const navigate = useNavigate();
                     </Card.Text>
 
                     <div className='d-flex justify-content-center'>
-                        <Button onClick={()=>handleBtn(_id)} className='button w-100 rounded-pill' variant="dark">Update</Button>
+                        <Button onClick={()=>handleBtn(_id)} className='button w-100 d-block rounded-pill' variant="dark">Update</Button>
                     </div>
                 </Card.Body>
             </Card>

@@ -5,6 +5,7 @@ import useHook from '../../Hook/Hook';
 import AddNewItem from '../AddNewItem/AddNewItem';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './ManageInventory.css'
 
 const ManageInventory = () => {
     const [perfumes, setPerfumes] = useHook();
@@ -37,19 +38,21 @@ const ManageInventory = () => {
                     perfumes?.map(perfume => <div key={perfume._id}>
                     
 
-                        <Card className='container ms-2 shadow card bg-light p-3 rounded-pill mb-2' style={{ width: '18rem' }}>
+                        <Card className='container ms-2 shadow card bg-light p-3 rounded mb-2' style={{ width: '18rem' }}>
+                        
 
                             <Card.Body className=' ms-0'>
+                            <Card.Img className='card-img' variant="top" src={perfume.img} />
                                 <Card.Title>Name: {perfume?.name}</Card.Title>
                                 <Card.Title>Price :${perfume?.price}</Card.Title>
                                 <Card.Title>Qty: {perfume.quantity}</Card.Title>
-                                <h6>Supplier : {perfume?.supplier}</h6>
-                                <h6>ID : {perfume._id}</h6>
-                                <p>Url: {perfume.img}</p>
+                                <p>Supplier : {perfume?.supplier}</p>
+                                <p>ID : {perfume._id}</p>
+                                
 
 
                                 <div className='d-flex justify-content-center'>
-                                    <Button onClick={() => handleDelete(perfume._id)} className='button w-100 rounded-pill' variant="danger">Delete</Button>
+                                    <Button onClick={() => handleDelete(perfume._id)} className='button w-100 rounded-pill mb-2' variant="danger">Delete</Button>
                                 </div>
                             </Card.Body>
                         </Card>
