@@ -27,7 +27,7 @@ const AddNewItem = () => {
         })
     }
     return (
-        <div>
+        <div className='mt-4'>
             <h3 className='text-primary'>Add New Item</h3>
             <Form onSubmit={handleAddItem}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

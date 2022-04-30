@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
@@ -49,9 +50,9 @@ const Login = () => {
         }
 
     }
-    // if (loading || sending) {
-    //     return <Loading></Loading>
-    // }
+    if (loading || sending) {
+        return <Loading></Loading>
+    }
     return (
         <div className='mt-5'>
             <h3 className='text-center text-primary mb-3'>Please Login!!</h3>
