@@ -9,60 +9,80 @@ const InventoryId = () => {
     const { id } = useParams();
 
     const [singleItem, setSingleItem] = useState({});
-    const { name, detail, img, price, quantity, supplier, _id } = singleItem;
+    const { name, detail, img, price,quantity, supplier, _id } = singleItem;
     
+    const [perfumeQty, setPerfumeQty] = useState(quantity);
+
+
 
     useEffect(() => {
         const url = `https://gentle-crag-55338.herokuapp.com/product/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setSingleItem(data))
-    }, [id]);
+    }, [perfumeQty]);
 
     //delevery item ------------>
-    const handleDelivery = () =>{
-        const quantity = singleItem.quantity - 1;
+    const handleDelivery = () => {
+        const newQtyTotal = parseInt(singleItem.quantity) - 1;
         
-        const updateItem = {quantity};
+
+        const updateItem = { newQtyTotal };
+
         const url = `https://gentle-crag-55338.herokuapp.com/product/${id}`;
         fetch(url, {
-            method : "PUT",
-            headers : {
+            method: "PUT",
+            headers: {
                 'content-type': 'application/json'
             },
-            body : JSON.stringify(updateItem)
+            body: JSON.stringify(updateItem)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log('success', data)
-            
-            toast('Product delivered successfully')
-            
-        })
+            .then(res => res.json())
+            .then(data => {
+                
+                if (data.acknowledged === true) {
+                    setPerfumeQty(updateItem)
+                    toast.success('Product delivery successfully')
+                }
+               
+                
+
+            })
 
     }
 
     //handle reload stock quantity----------->
     const handleUpdate = event => {
         event.preventDefault();
-        const quantity = event.target.quantity.value;
+        const inputQty = event.target.quantity.value;
+
+        const newQtyTotal = parseInt(quantity) + parseInt(inputQty);
         
-        const updateItem = {quantity};
+        
+        
+
+
+        const updateItem = { newQtyTotal };
         const url = `https://gentle-crag-55338.herokuapp.com/product/${id}`;
         fetch(url, {
-            method : "PUT",
-            headers : {
+            method: "PUT",
+            headers: {
                 'content-type': 'application/json'
             },
-            body : JSON.stringify(updateItem)
+            body: JSON.stringify(updateItem)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log('success', data)
-            
-            toast('Product Stock update successfully')
-            event.target.reset()
-        })
+            .then(res => res.json())
+            .then(data => {
+               
+                if (data.acknowledged === true) {
+                    setPerfumeQty(newQtyTotal)
+                    toast.success('Product Stock Added successfully')
+                    event.target.reset()
+                    
+                }
+
+
+            })
     }
 
     return (
@@ -82,7 +102,7 @@ const InventoryId = () => {
 
                             <div className='d-flex justify-content-center'>
                                 <Button onClick={handleDelivery} className='button w-100 rounded-pill' variant="danger">Delivered</Button>
-                                
+
                             </div>
                         </Card.Body>
                     </Card>
@@ -101,7 +121,7 @@ const InventoryId = () => {
                 </Form>
                 <ToastContainer></ToastContainer>
             </div>
-           
+
             <Link to='/manage' className='d-block mx-auto p-2 rounded-pill w-50 btn btn-primary text-decoration-none mb-5' bg="primary">Manage Inventory</Link>
 
             <ToastContainer></ToastContainer>

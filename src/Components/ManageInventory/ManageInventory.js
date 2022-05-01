@@ -21,8 +21,8 @@ const ManageInventory = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
-                    toast('Deleted Successfully')
+                    
+                    toast.success('Deleted Successfully')
                     const remaining = perfumes?.filter(item => item._id !== id);
                     setPerfumes(remaining);
                 });

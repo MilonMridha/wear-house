@@ -1,10 +1,12 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
+import { Button, Carousel } from 'react-bootstrap';
 import './Home.css'
 import bannerOne from '../../banner/banner-1.jpg'
 import bannerTwo from '../../banner/banner-2.jpg'
 import bannerThree from '../../banner/banner-4.jpg'
 import Inventory from '../Inventory/Inventory';
+import image from '../../image/new.jpg'
+import diagram from '../../image/diagram-2.jpg'
 
 
 const Home = () => {
@@ -50,6 +52,40 @@ const Home = () => {
                 </Carousel>
             </div>
             <Inventory></Inventory>
+
+            <Button className='mt-5 w-50 rounded-pill '>Manage Inventory</Button>
+
+            <div className='container'>
+                <h2 className='text-dark mt-5'>Opinon</h2>
+                <div className='row g-4 align-items-center mt-1 mb-3'>
+                    <div className='col-md-6'>
+                        <img className='w-75 rounded shadow' src={image} alt="" />
+                    </div>
+                    <div className='col-md-6'>
+                        <p className='text-start'>
+                            The most simple and practical tips are to keep your fragrance in a dark, cool, and dry place,” says Diptyque’s Eduardo Valadez. This method protects perfume from its three main aggressors: heat, light, and humidity. “A sunny windowsill or a cabinet or shelf near a heater will degrade perfume more quickly than storing in a dark, cool area,” adds Kristen Shirley, New York-based luxury expert, writer, and editor.
+
+
+                        </p>
+                    </div>
+                </div>
+                <h2 className='text-dark mt-5'>Diagram</h2>
+                <div className='row g-4 align-items-center mt-2 mb-3'>
+
+                    <div className='col-md-6 text-start'>
+                        <h4>
+                            Get the latest Perfume Store Design Ideas | Fragrances shop displays from Ujoy Display, the expert in custom design and manufacture perfume showcases
+
+                        </h4>
+                        <p>
+                            A perfume store is similar to a beauty or cosmetics store, but with an emphasis on selling fragrances...
+                        </p>
+                    </div>
+                    <div className='col-md-6'>
+                        <img className='w-75 shadow rounded' src={diagram} alt="" />
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
