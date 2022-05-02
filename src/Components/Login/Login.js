@@ -25,16 +25,29 @@ const Login = () => {
 
     const location = useLocation();
     const from = location?.state?.from?.pathname || '/';
-    if (user) {
-        navigate(from, { replace: true });
-    }
+    // if (user) {
+    //     navigate(from, { replace: true });
+    // }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
+        fetch('http://localhost:5000/login', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify({email})
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            localStorage.setItem('accessToken', data.accessToken);
+            navigate(from, { replace: true });navigate(from, { replace: true });
+        })
 
     }
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);

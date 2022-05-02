@@ -17,7 +17,11 @@ const MyItems = () => {
 
     useEffect(() => {
         const email = user.email;
-        fetch(`http://localhost:5000/add?email=${email}`)
+        fetch(`http://localhost:5000/add?email=${email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setMyItems(data))
     }, [user]);
@@ -46,7 +50,7 @@ const MyItems = () => {
     }
     return (
         <div className='container mt-5'>
-
+                <h3>My Items : {myItems.length}</h3>
             <div className='row row-cols-1 row-cols-md-3'>
                 {
                     myItems?.map(item => <div
