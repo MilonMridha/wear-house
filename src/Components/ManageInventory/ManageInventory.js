@@ -6,6 +6,7 @@ import AddNewItem from '../AddNewItem/AddNewItem';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './ManageInventory.css'
+import { Link } from 'react-router-dom';
 
 const ManageInventory = () => {
     const [perfumes, setPerfumes] = useHook();
@@ -21,10 +22,12 @@ const ManageInventory = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    
-                    toast.success('Deleted Successfully')
-                    const remaining = perfumes?.filter(item => item._id !== id);
-                    setPerfumes(remaining);
+                    if (data.acknowledged === true) {
+                        toast.success('Deleted Successfully')
+                        const remaining = perfumes?.filter(item => item._id !== id);
+                        setPerfumes(remaining);
+                    }
+
                 });
         }
     }
@@ -36,19 +39,19 @@ const ManageInventory = () => {
             <div className=' container mx-auto row row-cols-1 row-cols-md-3 g-4 mb-3 pb-3'>
                 {
                     perfumes?.map(perfume => <div key={perfume._id}>
-                    
+
 
                         <Card className='container ms-2 shadow card bg-light p-3 rounded mb-2' style={{ width: '18rem' }}>
-                        
+
 
                             <Card.Body className=' ms-0'>
-                            <Card.Img className='card-img' variant="top" src={perfume.img} />
+                                <Card.Img className='card-img' variant="top" src={perfume.img} />
                                 <Card.Title>Name: {perfume?.name}</Card.Title>
                                 <Card.Title>Price :${perfume?.price}</Card.Title>
                                 <Card.Title>Qty: {perfume.quantity}</Card.Title>
                                 <p>Supplier : {perfume?.supplier}</p>
                                 <p>ID : {perfume._id}</p>
-                                
+
 
 
                                 <div className='d-flex justify-content-center'>
@@ -56,14 +59,13 @@ const ManageInventory = () => {
                                 </div>
                             </Card.Body>
                         </Card>
-                        </div>)
+                    </div>)
                 }
             </div>
 
-            <div className='mt-5 mb-5'>
-                <AddNewItem></AddNewItem>
-            </div>
-                <ToastContainer></ToastContainer>
+
+            <Link to='/add' className='mt-5 w-50 text-decoration-none btn btn-primary rounded-pill mb-5 '>Add new Item</Link>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

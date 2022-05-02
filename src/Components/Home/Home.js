@@ -7,6 +7,7 @@ import bannerThree from '../../banner/banner-4.jpg'
 import Inventory from '../Inventory/Inventory';
 import image from '../../image/new.jpg'
 import diagram from '../../image/diagram-2.jpg'
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -53,7 +54,8 @@ const Home = () => {
             </div>
             <Inventory></Inventory>
 
-            <Button className='mt-5 w-50 rounded-pill '>Manage Inventory</Button>
+            
+            <Link to='/manage' className='mt-5 w-50 text-decoration-none btn btn-primary rounded-pill '>Manage Inventories</Link>
 
             <div className='container'>
                 <h2 className='text-dark mt-5'>Opinon</h2>

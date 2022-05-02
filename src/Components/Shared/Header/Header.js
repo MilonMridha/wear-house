@@ -33,7 +33,8 @@ const Header = () => {
                 <>
                   <CustomLink to="/manage" className='ms-3 text-light'>Manage Items</CustomLink>
                   <CustomLink to="/add" className='ms-3 text-light'>Add Item</CustomLink>
-                  <CustomLink to="" className='ms-3 text-light'>My Items</CustomLink>
+                  <CustomLink to="/myitem" className='ms-3 text-light'>My Items</CustomLink>
+                  
 
                   <Button onClick={logout} className='btn btn-danger rounded-pill p-1 ms-2 text-decoration-none'>SignOut</Button>
                 </>
