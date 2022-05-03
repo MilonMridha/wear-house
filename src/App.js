@@ -7,6 +7,7 @@ import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import ManageInventory from './Components/ManageInventory/ManageInventory';
 import MyItems from './Components/MyItems/MyItems';
+import Footer from './Components/Shared/Footer/Footer';
 
 import Header from './Components/Shared/Header/Header';
 import RequiredAuth from './Components/Shared/RequirAuth/RquirAuth';
@@ -41,6 +42,7 @@ function App() {
 
 
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }
