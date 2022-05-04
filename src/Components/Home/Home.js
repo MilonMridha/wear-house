@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Carousel } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
 import './Home.css'
 import bannerOne from '../../banner/banner-1.jpg'
 import bannerTwo from '../../banner/banner-2.jpg'
@@ -10,7 +10,10 @@ import diagram from '../../image/diagram-2.jpg'
 import { Link } from 'react-router-dom';
 
 
+
+
 const Home = () => {
+   
     return (
         <div>
             <div>

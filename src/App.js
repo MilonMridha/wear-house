@@ -2,6 +2,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AddNewItem from './Components/AddNewItem/AddNewItem';
+import Blogs from './Components/Blogs/Blogs';
 import Home from './Components/Home/Home';
 
 import Login from './Components/Login/Login';
@@ -39,7 +40,7 @@ function App() {
         </RequiredAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
-
+          <Route path='/blogs' element={<Blogs></Blogs>}></Route>
 
       </Routes>
       <Footer></Footer>

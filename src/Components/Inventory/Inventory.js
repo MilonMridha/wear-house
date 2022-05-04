@@ -1,10 +1,16 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import useHook from '../../Hook/Hook';
 import SixPerfume from '../SixPerfume/SixPerfume';
-
+import Loading from '../Shared/Loading/Loading';
 const Inventory = () => {
 
     const [perfumes, setPerfumes] = useHook();
+    const [user, loading] = useAuthState(auth);
+    if(loading){
+        return <Loading></Loading>
+    }
     
 
     return (

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import Loading from '../Shared/Loading/Loading';
 import './SixPerfume.css'
 
 const SixPerfume = ({ perfume }) => {
@@ -11,6 +14,10 @@ const navigate = useNavigate();
     const handleBtn =(id)=>{
         navigate('/inventory/'+id)
 
+    }
+    const [user, loading] = useAuthState(auth);
+    if(loading){
+        return <Loading></Loading>
     }
 
     return (
