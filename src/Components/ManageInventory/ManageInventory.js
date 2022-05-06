@@ -37,7 +37,7 @@ const ManageInventory = () => {
 
     return (
         <div className='container mt-5'>
-            <h3 className='text-primary mb-3'>Manage Inventory</h3>
+            <h3 className='text-dark mb-3'>Manage Inventory</h3>
 
             <div className=' container mx-auto row row-cols-1 row-cols-md-3 g-4 mb-3 pb-3'>
                 {
@@ -67,7 +67,7 @@ const ManageInventory = () => {
             </div>
 
 
-            <Link to='/add' className='mt-5 w-50 text-decoration-none btn btn-primary rounded-pill mb-5 '>Add new Item</Link>
+            <Link to='/add' className='mt-5 w-50 text-decoration-none btn btn-dark rounded-pill mb-5 '>Add new Item</Link>
             <ToastContainer></ToastContainer>
         </div>
     );

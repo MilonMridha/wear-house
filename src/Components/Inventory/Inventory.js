@@ -13,9 +13,9 @@ const Inventory = () => {
     return (
         <div className='container mt-5'>
             
-            <h2 className='text-primary'>Inventory</h2>
+            <h2 className='text-dark mb-3'>Inventory</h2>
             { loading? <Loading></Loading> : 
-             <div className=' container mx-auto  row row-cols-1 row-cols-md-3 g-4 mt-2'>
+             <div className=' container mx-auto  row row-cols-1 row-cols-md-3 g-4'>
                     {
                         perfumes?.slice(0, 6).map(perfume => <SixPerfume
                             key={perfume._id}

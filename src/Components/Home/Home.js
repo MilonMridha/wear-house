@@ -8,9 +8,7 @@ import Inventory from '../Inventory/Inventory';
 import image from '../../image/new.jpg'
 import diagram from '../../image/diagram-2.jpg'
 import { Link } from 'react-router-dom';
-import auth from '../../firebase.init';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import Loading from '../Shared/Loading/Loading';
+
 
 
 
@@ -61,10 +59,10 @@ const Home = () => {
             <Inventory></Inventory>
 
             
-            <Link to='/manage' className='mt-5 w-50 text-decoration-none btn btn-primary rounded-pill '>Manage Inventories</Link>
+            <Link to='/manage' className='mt-5 mb-3 w-50 text-decoration-none btn btn-dark rounded-pill '>Manage Inventories</Link>
 
             <div className='container'>
-                <h2 className='text-dark mt-5'>Opinon</h2>
+                <h3 className='text-dark mt-5'>Opinon</h3>
                 <div className='row g-4 align-items-center mt-1 mb-3'>
                     <div className='col-md-6'>
                         <img className='w-75 rounded shadow' src={image} alt="" />
@@ -77,7 +75,7 @@ const Home = () => {
                         </p>
                     </div>
                 </div>
-                <h2 className='text-dark mt-5'>Diagram</h2>
+                <h3 className='text-dark mt-5'>Diagram</h3>
                 <div className='row g-4 align-items-center mt-2 mb-3'>
 
                     <div className='col-md-6 text-start'>

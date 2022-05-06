@@ -6,6 +6,10 @@ import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
 import CustomLink from '../CustomActive/CustomActive';
 import logo from '../../SocialLogin/Social-icon/perfume-logo.png'
+import './Header.css'
+
+
+
 const Header = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
@@ -16,7 +20,7 @@ const Header = () => {
   };
   return (
     <div>
-      <Navbar className='rounded p-0' sticky='top' bg="primary" expand="lg">
+      <Navbar className='rounded p-0 header' sticky='top' bg="" expand="lg">
         <Container>
           <Navbar.Brand href="#home" className='text-light' > <h2> My Perfume House<span><img src={logo} alt="" /></span></h2> </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -34,7 +38,7 @@ const Header = () => {
                   <CustomLink to="/manage" className='ms-3 text-light'>Manage Items</CustomLink>
                   <CustomLink to="/add" className='ms-3 text-light'>Add Item</CustomLink>
                   <CustomLink to="/myitem" className='ms-3 text-light'>My Items</CustomLink>
-                  
+
 
                   <Button onClick={logout} className='btn btn-danger rounded-pill p-1 ms-2 text-decoration-none'>SignOut</Button>
                 </>

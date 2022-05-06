@@ -1,9 +1,13 @@
+import { signOut } from 'firebase/auth';
 import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
+
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
+
+
 
 const SignUp = () => {
     const nameRef = useRef('');
@@ -19,9 +23,7 @@ const SignUp = () => {
         loading,
         hookError,
       ] = useCreateUserWithEmailAndPassword(auth,  { sendEmailVerification: true });
-      if(loading){
-          return <Loading></Loading>
-      }
+      
     const handleFormSubmit = event =>{
         event.preventDefault()
         const name = nameRef.current.value;
@@ -37,11 +39,20 @@ const SignUp = () => {
             return
         }
         createUserWithEmailAndPassword(email, password);
-        navigate('/');
+        
+        alert('Successfully Registered!!  Please Login')
         
         
-
-
+    }
+    if(user){
+        
+        signOut(auth)
+        navigate('/login')
+        
+        
+    }
+    if(loading){
+        return <Loading></Loading>
     }
     return (
         <div className='w-75 mx-auto mt-5 mb-5'>
@@ -73,6 +84,7 @@ const SignUp = () => {
                     </Button>
                 </Form>
                 <p className='text-center mt-2'>Already User? <Link to='/login' className='text-decoration-none'>Please Login</Link></p>
+                
         </div>
     );
 };

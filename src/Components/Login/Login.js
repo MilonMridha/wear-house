@@ -44,7 +44,7 @@ const Login = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+           
             localStorage.setItem('accessToken', data.accessToken);
             navigate(from, { replace: true });navigate(from, { replace: true });
         })
