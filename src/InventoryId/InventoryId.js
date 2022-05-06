@@ -25,29 +25,34 @@ const InventoryId = () => {
     //delevery item ------------>
     const handleDelivery = () => {
         const newQtyTotal = parseInt(singleItem.quantity) - 1;
-        
+        if(newQtyTotal < 0){
+            toast.error('No stock here now')
+        }
+        else{
+            const updateItem = { newQtyTotal };
 
-        const updateItem = { newQtyTotal };
-
-        const url = `https://gentle-crag-55338.herokuapp.com/product/${id}`;
-        fetch(url, {
-            method: "PUT",
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(updateItem)
-        })
-            .then(res => res.json())
-            .then(data => {
-                
-                if (data.acknowledged === true) {
-                    setPerfumeQty(updateItem)
-                    toast.success('Product delivery successfully')
-                }
-               
-                
-
+            const url = `https://gentle-crag-55338.herokuapp.com/product/${id}`;
+            fetch(url, {
+                method: "PUT",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(updateItem)
             })
+                .then(res => res.json())
+                .then(data => {
+                    
+                    if (data.acknowledged === true) {
+                        setPerfumeQty(updateItem)
+                        toast.success('Product delivery successfully')
+                    }
+                   
+                    
+    
+                })
+        }
+
+        
 
     }
 

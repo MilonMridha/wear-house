@@ -9,7 +9,7 @@ import logo from '../../SocialLogin/Social-icon/perfume-logo.png'
 
 const Footer = () => {
     return (
-        <div className=' row h-50 mx-auto bg-dark mt-5 p-5'>
+        <div className='row h-50 mx-auto bg-dark mt-5 p-5'>
             <div className='row mb-3'>
                 <div className='col-md-4'>
                     <h3 className='text-light text-start'>Perfume House<span><img src={logo} alt="" /></span></h3>

@@ -19,7 +19,7 @@ const AddNewItem = () => {
 
         const newItem = { name, price, img, detail, email }
 
-        fetch("http://localhost:5000/add", {
+        fetch("https://gentle-crag-55338.herokuapp.com/add", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

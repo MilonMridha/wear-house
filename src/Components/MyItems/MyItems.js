@@ -7,41 +7,58 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './MyItems.css'
 
+import useHook from '../../Hook/Hook';
+import { useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
+
 
 
 const MyItems = () => {
 
     const [user] = useAuthState(auth);
     const [myItems, setMyItems] = useState([]);
+    const navigate = useNavigate()
 
+    
 
     useEffect(() => {
         const email = user.email;
-        fetch(`http://localhost:5000/add?email=${email}`, {
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+
+        try{
+            fetch(`https://gentle-crag-55338.herokuapp.com/add?email=${email}`, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => res.json())
+                .then(data => setMyItems(data))
+        }
+        catch(error){
+            console.log(error.message);
+            if(error.response.status === 401 || error.response.status === 403){
+                signOut(auth);
+                navigate('/login')
             }
-        })
-            .then(res => res.json())
-            .then(data => setMyItems(data))
+
+        }
     }, [user]);
 
 
     const handleMyItem = (id) => {
         const proceed = window.confirm('Do you want to delete')
         if (proceed) {
-            const url = `http://localhost:5000/add/${id}`;
+            const url = `https://gentle-crag-55338.herokuapp.com/add/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
+                    
                     if (data.acknowledged === true) {
                         toast.success('Delete Successfull');
                         const remaining = myItems.filter(item => item._id !== id);
                         setMyItems(remaining);
-                        
+
                     }
 
                 })
@@ -50,10 +67,10 @@ const MyItems = () => {
     }
     return (
         <div className='container mt-5'>
-                <h3>My Items : {myItems.length}</h3>
+            <h3>My Items : {myItems?.length}</h3>
             <div className='row row-cols-1 row-cols-md-3'>
                 {
-                    myItems?.map(item => <div
+                myItems?.map(item => <div
                         key={item._id}>
                         <Card className='shadow' style={{ width: '18rem' }}>
 

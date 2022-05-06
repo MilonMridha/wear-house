@@ -35,7 +35,7 @@ const Login = () => {
         const password = passwordRef.current.value;
         
         await signInWithEmailAndPassword(email, password);
-        fetch('http://localhost:5000/login', {
+        fetch('https://gentle-crag-55338.herokuapp.com/login', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

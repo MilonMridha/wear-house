@@ -8,12 +8,15 @@ import Inventory from '../Inventory/Inventory';
 import image from '../../image/new.jpg'
 import diagram from '../../image/diagram-2.jpg'
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import Loading from '../Shared/Loading/Loading';
 
 
 
 
 const Home = () => {
-   
+    
     return (
         <div>
             <div>

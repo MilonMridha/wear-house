@@ -8,6 +8,7 @@ import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import ManageInventory from './Components/ManageInventory/ManageInventory';
 import MyItems from './Components/MyItems/MyItems';
+import NotFound from './Components/NotFound/NotFound';
 import Footer from './Components/Shared/Footer/Footer';
 
 import Header from './Components/Shared/Header/Header';
@@ -34,14 +35,15 @@ function App() {
         <Route path='/add' element={<RequiredAuth>
           <AddNewItem></AddNewItem>
         </RequiredAuth>}></Route>
-        
+
         <Route path='/myitem' element={<RequiredAuth>
           <MyItems></MyItems>
         </RequiredAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
-          <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
 
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

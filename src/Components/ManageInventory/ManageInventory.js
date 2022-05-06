@@ -2,14 +2,17 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 
 import useHook from '../../Hook/Hook';
-import AddNewItem from '../AddNewItem/AddNewItem';
+
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './ManageInventory.css'
 import { Link } from 'react-router-dom';
 
+
 const ManageInventory = () => {
     const [perfumes, setPerfumes] = useHook();
+
+    
 
 
     const handleDelete = (id) => {
