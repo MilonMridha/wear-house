@@ -1,11 +1,39 @@
 [
     {
+        "name": "Sara Saleh",
+        "img" : "https://i.ibb.co/dt4WwcJ/sara-saleh.jpg",
+        "detail": "This newer classification method is widely used in retail and the fragrance industry",
+        "price": "500",
+        "quantity": "7",
+        "sold": "33",
+        "supplier" : "Saleh Limited"
+    },
+    {
         "name": "Laura",
         "img" : "https://i.ibb.co/qkK2BcR/laura.jpg",
         "detail": "An old fragrance family that until recently consisted mainly of freshening eau de colognes",
         "price": "350",
         "quantity": "9",
+        "sold": "44",
         "supplier" : "Laura Limited"
+    },
+    {
+        "name": "Laura chouette",
+        "img" : "https://i.ibb.co/NL9Hgf2/laura-chouette.jpg",
+        "detail": "Valued since antiquity, resins have been widely used in incense and perfumery",
+        "price": "400",
+        "quantity": "8",
+        "sold": "25",
+        "supplier" : "Chouette Limited"
+    },
+    {
+        "name": "Villain",
+        "img" : "https://i.ibb.co/vzG4byv/villain.jpg",
+        "detail": "This newer classification method is widely used in retail and the fragrance industry",
+        "price": "550",
+        "quantity": "12",
+        "sold": "50",
+        "supplier" : "Villain Limited"
     },
     {
         "name": "Yixian Zaho",
@@ -16,11 +44,21 @@
         "supplier" : "Zhao Limited"
     },
     {
+        "name": "Hanna Balan",
+        "img" : "https://i.ibb.co/0f9HtvM/hanna-balan.jpg",
+        "detail": "Meaning Cyprus in French, this includes fragrances built on bergamot",
+        "price": "300",
+        "quantity": "19",
+        "sold": "22",
+        "supplier" : "label Limited"
+    },
+    {
         "name": "Fernando",
         "img" : "https://i.ibb.co/hd5V1Qw/fernando.jpg",
         "detail": "The grouping of perfumes can never be completely objective or definitive",
         "price": "300",
         "quantity": "14",
+        "sold": "22",
         "supplier" : "Martin Limited"
     },
     {
@@ -29,32 +67,20 @@
         "detail": "Even a perfume designated as single flower will have subtle undertones of other aromatics",
         "price": "300",
         "quantity": "20",
+        "sold": "22",
         "supplier" : "Smith Limited"
     },
-    {
-        "name": "Hanna Balan",
-        "img" : "https://i.ibb.co/0f9HtvM/hanna-balan.jpg",
-        "detail": "Meaning Cyprus in French, this includes fragrances built on bergamot",
-        "price": "300",
-        "quantity": "19",
-        "supplier" : "label Limited"
-    },
+    
     {
         "name": "Austin",
         "img" : "https://i.ibb.co/9cthYKR/austin-wilcox.jpg",
         "detail": "British Rococo perfume vase; circa 1761; soft-paste porcelain",
         "price": "300",
         "quantity": "18",
+        "sold": "21",
         "supplier" : "Dcosta Limited"
     },
-    {
-        "name": "Villain",
-        "img" : "https://i.ibb.co/vzG4byv/villain.jpg",
-        "detail": "This newer classification method is widely used in retail and the fragrance industry",
-        "price": "550",
-        "quantity": "12",
-        "supplier" : "Villain Limited"
-    },
+    
     {
         "name": "Jeroen",
         "img" : "https://i.ibb.co/nfhqW9M/jeroen-den.jpg",
@@ -72,22 +98,8 @@
         "supplier" : "Jeroen limited"
     },
     
-    {
-        "name": "Laura chouette",
-        "img" : "https://i.ibb.co/NL9Hgf2/laura-chouette.jpg",
-        "detail": "Valued since antiquity, resins have been widely used in incense and perfumery",
-        "price": "400",
-        "quantity": "8",
-        "supplier" : "Chouette Limited"
-    },
-    {
-        "name": "Sara Saleh",
-        "img" : "https://i.ibb.co/dt4WwcJ/sara-saleh.jpg",
-        "detail": "This newer classification method is widely used in retail and the fragrance industry",
-        "price": "500",
-        "quantity": "7",
-        "supplier" : "Saleh Limited"
-    },
+    
+    
     
     {
         "name": "Wiliam-bout",

@@ -9,7 +9,8 @@ const InventoryId = () => {
     const { id } = useParams();
 
     const [singleItem, setSingleItem] = useState({});
-    const { name, detail, img, price,quantity, supplier, _id } = singleItem;
+    console.log(singleItem)
+    const { name, detail, img, price,quantity,sold, supplier, _id } = singleItem;
     
     const [perfumeQty, setPerfumeQty] = useState(quantity);
 
@@ -100,6 +101,7 @@ const InventoryId = () => {
                             <Card.Title>{name}</Card.Title>
                             <Card.Title>Price :${price}</Card.Title>
                             <Card.Title>Quantity: {quantity}</Card.Title>
+                            <Card.Title>Sold: {sold} </Card.Title>
                             <h6>Supplier : {supplier}</h6>
                             <Card.Text>
                                 {detail}
@@ -114,6 +116,7 @@ const InventoryId = () => {
                 }
             </div>
             <div className='mb-5'>
+                <h4 className='text-success'>Restock This Item</h4>
                 <Form onSubmit={handleUpdate}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
 
@@ -127,7 +130,7 @@ const InventoryId = () => {
                 <ToastContainer></ToastContainer>
             </div>
 
-            <Link to='/manage' className='d-block mx-auto p-2 rounded-pill w-50 btn btn-primary text-decoration-none mb-5' bg="primary">Manage Inventory</Link>
+            <Link to='/manage' className='d-block mx-auto p-2 rounded-pill w-50 btn btn-dark text-decoration-none mb-5' bg="dark">Manage Inventory</Link>
 
             <ToastContainer></ToastContainer>
         </div>
