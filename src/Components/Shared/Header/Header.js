@@ -28,16 +28,16 @@ const Header = () => {
 
 
             <Nav className="ms-auto">
-              <CustomLink className='text-light' to="/"  >Home</CustomLink>
+              <CustomLink className='text-light ms-3' to="/"  >Home</CustomLink>
 
               <CustomLink to="/blogs" className='ms-3 text-light'>Blogs</CustomLink>
 
 
               {user ?
                 <>
-                  <CustomLink to="/manage" className='ms-3 text-light'>Manage Items</CustomLink>
-                  <CustomLink to="/add" className='ms-3 text-light'>Add Item</CustomLink>
-                  <CustomLink to="/myitem" className='ms-3 text-light'>My Items</CustomLink>
+                  <CustomLink to="/manage" className='ms-3 text-light'>Manage-Items</CustomLink>
+                  <CustomLink to="/add" className='ms-3 text-light'>Add-Item</CustomLink>
+                  <CustomLink to="/myitem" className='ms-3 text-light'>My-Items</CustomLink>
 
 
                   <Button onClick={logout} className='btn btn-danger rounded-pill p-1 ms-2 text-decoration-none'>SignOut</Button>

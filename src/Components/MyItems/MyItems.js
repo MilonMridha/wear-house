@@ -10,7 +10,7 @@ import './MyItems.css'
 
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
-import axios from 'axios';
+
 
 
 const MyItems = () => {
@@ -78,7 +78,7 @@ const MyItems = () => {
     return (
         <div className='container mt-5'>
             <h3>My Items : {myItems?.length}</h3>
-            <div className='row row-cols-1 row-cols-md-3'>
+            <div className=' container mx-auto g-4 row row-cols-1 row-cols-md-3 mt-2'>
                 {
                     myItems?.map(item => <div
                         key={item?._id}>

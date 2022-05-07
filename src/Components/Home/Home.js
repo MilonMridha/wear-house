@@ -2,8 +2,9 @@ import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import './Home.css'
 import bannerOne from '../../banner/banner-1.jpg'
-import bannerTwo from '../../banner/banner-2.jpg'
-import bannerThree from '../../banner/banner-4.jpg'
+import bannerTwo from '../../banner/banner-7.jpg'
+import bannerThree from '../../banner/banner-8.jpg'
+import bannerFour from '../../banner/banner-4.jpg'
 import Inventory from '../Inventory/Inventory';
 import image from '../../image/new.jpg'
 import diagram from '../../image/diagram-2.jpg'
@@ -14,7 +15,7 @@ import { Link } from 'react-router-dom';
 
 
 const Home = () => {
-    
+
     return (
         <div>
             <div>
@@ -38,10 +39,12 @@ const Home = () => {
                         />
 
                         <Carousel.Caption>
-                            <h1 className='text-warning'>My Perfume House</h1>
-                            <p className='text-warning'>Perfume is like a new dress, it makes you quite simply marvelous....</p>
+                            <h1 className='text-primary'>My Perfume House</h1>
+                            <p className='text-primary'>Perfume is like a new dress, it makes you quite simply marvelous....</p>
                         </Carousel.Caption>
                     </Carousel.Item>
+
+
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
@@ -50,15 +53,29 @@ const Home = () => {
                         />
 
                         <Carousel.Caption>
-                            <h1 className='text-warning'>My Perfume House</h1>
-                            <p className='text-warning'>Perfume is like a new dress, it makes you quite simply marvelous....</p>
+                            <h1 className='text-dark'>My Perfume House</h1>
+                            <p className='text-dark'>Perfume is like a new dress, it makes you quite simply marvelous....</p>
                         </Carousel.Caption>
                     </Carousel.Item>
+
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src={bannerFour}
+                            alt="Fourth slide"
+                        />
+
+                        <Carousel.Caption>
+                            <h1 className='text-light'>My Perfume House</h1>
+                            <p className='text-light'>Perfume is like a new dress, it makes you quite simply marvelous....</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+
                 </Carousel>
             </div>
             <Inventory></Inventory>
 
-            
+
             <Link to='/manage' className='mt-5 mb-3 w-50 text-decoration-none btn btn-dark rounded-pill '>Manage Inventories</Link>
 
             <div className='container'>
