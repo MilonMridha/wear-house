@@ -2,3 +2,12 @@
     width: 50px !important;
     border-radius: 50% !important;
 }
+.pagination button{
+    margin-right: 10px;
+    border: 1px solid orange;
+    border-radius: 5px;
+}
+.pagination .selected{
+    background-color: orange;
+    color: white;
+}

@@ -6,6 +6,7 @@ My projects name is "My Perfume House"
 
 ### Short information of my site----------->
 - It,s a single page application and it's contains of information a store house of perfume.
+- It has pagination system in Manage Inventory page.
 - It's contains react router firebase authentication  application.
 - It's has two part. one part is backend & other part is client or Frontend.
 - Backend part is hosting in Heroku and frontend part is firebase.
