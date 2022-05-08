@@ -38,7 +38,7 @@ const AddNewItem = () => {
     }
     return (
         <div className='mt-4'>
-            <h3 className='text-dark mb-3'>Add New Item</h3>
+            <h3 className='text-dark mb-3'>Add Your Item</h3>
             <Form onSubmit={handleAddItem}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
 
@@ -63,7 +63,7 @@ const AddNewItem = () => {
                 </Form.Group>
 
                 <Button className='d-block mx-auto rounded-pill' variant="success" type="submit">
-                    Add New Item
+                    Add your Item
                 </Button>
             </Form>
             <ToastContainer></ToastContainer>
