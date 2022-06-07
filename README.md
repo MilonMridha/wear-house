@@ -1,13 +1,13 @@
-## Hi I am Milon Mridha ,,,, This is my readme.md file......
+## Hi I am Milon Mridha. This is my readme.md file......
 
 My projects name is "My Perfume House"
 
  My Projects Website link is here [https://perfume-wear-house.web.app/]
 
 ### Short information of my site----------->
-- It,s a single page application and it's contains of information a store house of perfume.
-- It has pagination system in Manage Inventory page.
-- It's contains react router firebase authentication  application.
+- Full-stack website and dynamic landing page with 6 sections and also responsive design.
+- Email password and three social login functionality using firebase authentication.
+- It has a JWT authentication and pagination system to manage all inventory sections.
 - It's has two part. one part is backend & other part is client or Frontend.
 - Backend part is hosting in Heroku and frontend part is firebase.
 - It's has a navbar which maintain different route of Home,blogs, addItems,MyItem, ManageItem, Login ...

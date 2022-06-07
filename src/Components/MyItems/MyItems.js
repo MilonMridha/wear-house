@@ -20,37 +20,37 @@ const MyItems = () => {
 
     const navigate = useNavigate()
 
+    // if(Array.isArray(data)){
+    //     setMyItems(data)
 
+    // }
+    // else{
+    //         setMyItems([])
+    // }
 
     useEffect(() => {
 
         const email = user?.email;
         const url = `https://gentle-crag-55338.herokuapp.com/add?email=${email}`;
-        try{
+        
             fetch( url, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
-                .then(res => res.json())
-                .then(data => {
-                    if(Array.isArray(data)){
-                        setMyItems(data)
-
+                .then(res => {
+                    console.log(res)
+                    if(res.status === 401 || res.status === 403){
+                        signOut(auth)
+                        navigate('/login')
                     }
-                    else{
-                            setMyItems([])
-                    }
+                   return res.json()
                 })
-        }
-        catch(error){
-            console.log(error.message);
-            if(error?.response.status === 401 || error?.response.status === 403){
-                signOut(auth);
-                navigate('/login')
-            }
-
-        }
+                .then(data => {
+                setMyItems(data)
+                })
+        
+        
     }, [user]);
 
 
