@@ -7,6 +7,7 @@ import { signOut } from 'firebase/auth';
 import CustomLink from '../CustomActive/CustomActive';
 import logo from '../../SocialLogin/Social-icon/perfume-logo.png'
 import './Header.css'
+import ReactTyped from 'react-typed';
 
 
 
@@ -22,7 +23,13 @@ const Header = () => {
     <div>
       <Navbar className='rounded p-0 header' sticky='top' bg="" expand="lg">
         <Container>
-          <Navbar.Brand href="#home" className='text-light' > <h2> My Perfume House<span><img src={logo} alt="" /></span></h2> </Navbar.Brand>
+          <Navbar.Brand href="#home" className='text-light' > <h2> <ReactTyped
+            strings={["My Perfume House"]}
+            typeSpeed={40}
+            backSpeed={50}
+            loop
+          />
+            <span><img src={logo} alt="" /></span></h2> </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className=''>
 

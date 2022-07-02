@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
-
+import Rotate from 'react-reveal/Rotate';
 const Login = () => {
 
     const navigate = useNavigate();
@@ -33,22 +33,22 @@ const Login = () => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        
+
         await signInWithEmailAndPassword(email, password);
-        
+
         fetch('https://gentle-crag-55338.herokuapp.com/login', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
             },
-            body: JSON.stringify({email})
+            body: JSON.stringify({ email })
         })
-        .then(res => res.json())
-        .then(data => {
-           
-            localStorage.setItem('accessToken', data.accessToken);
-            navigate(from, { replace: true });navigate(from, { replace: true });
-        })
+            .then(res => res.json())
+            .then(data => {
+
+                localStorage.setItem('accessToken', data.accessToken);
+                navigate(from, { replace: true }); navigate(from, { replace: true });
+            })
 
     }
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
@@ -68,34 +68,36 @@ const Login = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='mt-5'>
-            <h3 className='text-center text-primary mb-3'>Please Login!!</h3>
-            <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Rotate bottom right>
+            <div className='mt-5'>
+                <h3 className='text-center text-primary mb-3'>Please Login!!</h3>
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
 
-                    <Form.Control ref={emailRef} className='rounded-pill w-50 mx-auto shadow pb-2' type="email" placeholder="Enter email" required />
-                </Form.Group>
+                        <Form.Control ref={emailRef} className='rounded-pill w-50 mx-auto shadow pb-2' type="email" placeholder="Enter email" required />
+                    </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
 
-                    <Form.Control ref={passwordRef} className='rounded-pill w-50 mx-auto shadow pb-2' type="password" placeholder="password" required />
-                </Form.Group>
+                        <Form.Control ref={passwordRef} className='rounded-pill w-50 mx-auto shadow pb-2' type="password" placeholder="password" required />
+                    </Form.Group>
 
 
 
-                <p className='text-danger'>{hookError?.message} </p>
-                <Button className='w-25 d-block rounded-pill mx-auto' variant="primary" type="submit">
-                    Login
-                </Button>
-            </Form>
-            <p className='text-center mt-2'>New to Perfume-House? <Link to='/signup' className='text-decoration-none'>Please SignUp.</Link></p>
+                    <p className='text-danger'>{hookError?.message} </p>
+                    <Button className='w-25 d-block rounded-pill mx-auto' variant="primary" type="submit">
+                        Login
+                    </Button>
+                </Form>
+                <p className='text-center mt-2'>New to Perfume-House? <Link to='/signup' className='text-decoration-none'>Please SignUp.</Link></p>
 
-            <p className='text-center'>Forget Password ? <button className='text-primary text-decoration-none p-0 btn btn-link' onClick={resetPassword}> Reset password</button></p>
-            <ToastContainer></ToastContainer>
-            <div>
-                <SocialLogin></SocialLogin>
+                <p className='text-center'>Forget Password ? <button className='text-primary text-decoration-none p-0 btn btn-link' onClick={resetPassword}> Reset password</button></p>
+                <ToastContainer></ToastContainer>
+                <div>
+                    <SocialLogin></SocialLogin>
+                </div>
             </div>
-        </div>
+        </Rotate>
     );
 };
 

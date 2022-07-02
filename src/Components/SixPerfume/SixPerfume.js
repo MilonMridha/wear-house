@@ -1,10 +1,8 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
-
 import { useNavigate } from 'react-router-dom';
-
 import './SixPerfume.css'
-
+import Slide from 'react-reveal/Slide';
 const SixPerfume = ({ perfume }) => {
 const { name, detail, img, price, quantity, supplier, _id } = perfume;
 
@@ -17,7 +15,8 @@ const navigate = useNavigate();
     
 
     return (
-        <div>
+        <Slide top>
+<div>
             <Card className='h-100 shadow card pb-3  rounded' style={{ width: '18rem' }}>
                 <Card.Img className='home-image' variant="top" src={img} />
                 <Card.Body className=' ms-0'>
@@ -35,6 +34,8 @@ const navigate = useNavigate();
                 </Card.Body>
             </Card>
         </div>
+        </Slide>
+        
     );
 };
 

@@ -9,7 +9,7 @@ import Inventory from '../Inventory/Inventory';
 import image from '../../image/new.jpg'
 import diagram from '../../image/diagram-2.jpg'
 import { Link } from 'react-router-dom';
-
+import Slide from 'react-reveal/Slide';
 
 
 
@@ -80,34 +80,38 @@ const Home = () => {
 
             <div className='container'>
                 <h3 className='text-dark mt-5'>Opinon</h3>
-                <div className='row g-4 align-items-center mt-1 mb-3'>
-                    <div className='col-md-6'>
-                        <img className='w-75 rounded shadow' src={image} alt="" />
-                    </div>
-                    <div className='col-md-6'>
-                        <p className='text-start'>
-                            The most simple and practical tips are to keep your fragrance in a dark, cool, and dry place,” says Diptyque’s Eduardo Valadez. This method protects perfume from its three main aggressors: heat, light, and humidity. “A sunny windowsill or a cabinet or shelf near a heater will degrade perfume more quickly than storing in a dark, cool area,” adds Kristen Shirley, New York-based luxury expert, writer, and editor.
+                <Slide left>
+                    <div className='row g-4 align-items-center mt-1 mb-3'>
+                        <div className='col-md-6'>
+                            <img className='w-75 rounded shadow' src={image} alt="" />
+                        </div>
+                        <div className='col-md-6'>
+                            <p className='text-start'>
+                                The most simple and practical tips are to keep your fragrance in a dark, cool, and dry place,” says Diptyque’s Eduardo Valadez. This method protects perfume from its three main aggressors: heat, light, and humidity. “A sunny windowsill or a cabinet or shelf near a heater will degrade perfume more quickly than storing in a dark, cool area,” adds Kristen Shirley, New York-based luxury expert, writer, and editor.
 
 
-                        </p>
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </Slide>
                 <h3 className='text-dark mt-5'>Diagram</h3>
-                <div className='row g-4 align-items-center mt-2 mb-3'>
+                <Slide right>
+                    <div className='row g-4 align-items-center mt-2 mb-3'>
 
-                    <div className='col-md-6 text-start'>
-                        <h4>
-                            Get the latest Perfume Store Design Ideas | Fragrances shop displays from Ujoy Display, the expert in custom design and manufacture perfume showcases
+                        <div className='col-md-6 text-start'>
+                            <h4>
+                                Get the latest Perfume Store Design Ideas | Fragrances shop displays from Ujoy Display, the expert in custom design and manufacture perfume showcases
 
-                        </h4>
-                        <p>
-                            A perfume store is similar to a beauty or cosmetics store, but with an emphasis on selling fragrances...
-                        </p>
+                            </h4>
+                            <p>
+                                A perfume store is similar to a beauty or cosmetics store, but with an emphasis on selling fragrances...
+                            </p>
+                        </div>
+                        <div className='col-md-6'>
+                            <img className='w-75 shadow rounded' src={diagram} alt="" />
+                        </div>
                     </div>
-                    <div className='col-md-6'>
-                        <img className='w-75 shadow rounded' src={diagram} alt="" />
-                    </div>
-                </div>
+                </Slide>
             </div>
         </div>
     );
